@@ -113,20 +113,25 @@ const Dashboard = () => {
                     X
                   </span>
                 </div>
-              ))}
+            ))}
+          {data && data.length === 0 && (
+            <div className={styles.post}>
+              <h2 className={styles.noPosts}>No Posts To Show! Create One</h2>
+            </div>
+          )}
         </div>
         <form className={styles.new} onSubmit={handleSubmit}>
           <h1>Add New Post</h1>
           <input type="text" placeholder="Title" className={styles.input} />
           <input type="text" placeholder="Desc" className={styles.input} />
-          <input type="text" placeholder="Image" className={styles.input} />
+          <input type="text" placeholder="Image link" className={styles.input} />
           <textarea
             placeholder="Content"
             className={styles.textArea}
             cols="30"
             rows="10"
           ></textarea>
-          <button className={styles.button}>Send</button>
+          <button className={styles.button}>Create Post</button>
         </form>
       </div>
     );
